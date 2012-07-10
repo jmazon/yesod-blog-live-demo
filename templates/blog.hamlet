@@ -1,2 +1,7 @@
 <h1> Riviera.rb blog
-<p> Unfortunately, this blog is empty.
+$if null posts
+  <p> Unfortunately, this blog is empty.
+$else
+  <ul>
+    $forall post <- posts
+      <li> #{postTitle post}
