@@ -2,7 +2,7 @@
 
 <ol>
   <li>The brand new #
-    <a href="/blog">Riviera.rb blog
+    <a href=@{BlogR}>Riviera.rb blog
     !!!
   <li>Now that you have a working project you should use the #
     \<a href="http://www.yesodweb.com/book/">Yesod book</a> to learn more. #
