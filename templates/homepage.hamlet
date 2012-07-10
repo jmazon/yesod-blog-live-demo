@@ -1,6 +1,9 @@
 <h1>_{MsgHello}
 
 <ol>
+  <li>The brand new #
+    <a href="/blog">Riviera.rb blog
+    !!!
   <li>Now that you have a working project you should use the #
     \<a href="http://www.yesodweb.com/book/">Yesod book</a> to learn more. #
     You can also use this scaffolded site to explore some basic concepts.
