@@ -51,10 +51,11 @@ getBlogR = do
 
 postBlogR :: Handler RepHtml
 postBlogR = do
-  Just title <- lookupPostParam "title"
-  Just content <- lookupPostParam "content"
-  postId <- runDB (insert $ Post title content)
-  redirect (PostR postId)
+  ((result,formWidget),enctype) <- runFormPost postCreationForm
+  case result of
+    FormSuccess post -> do
+      postId <- runDB (insert post)
+      redirect (PostR postId)
 
 getPostR :: PostId -> Handler RepHtml
 getPostR id = do
