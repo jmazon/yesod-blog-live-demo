@@ -4,4 +4,5 @@ $if null posts
 $else
   <ul>
     $forall Entity postId post <- posts
-      <li> #{postTitle post}
+      <li>
+        <a href=@{PostR postId}> #{postTitle post}

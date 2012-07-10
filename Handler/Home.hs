@@ -42,3 +42,8 @@ getBlogR :: Handler RepHtml
 getBlogR = do
   posts <- runDB (selectList [] [])
   defaultLayout $(widgetFile "blog")
+
+getPostR :: PostId -> Handler RepHtml
+getPostR id = do
+  Just post <- runDB (get id)
+  defaultLayout $(widgetFile "post")
