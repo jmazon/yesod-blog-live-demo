@@ -37,3 +37,6 @@ sampleForm :: Form (FileInfo, Text)
 sampleForm = renderDivs $ (,)
     <$> fileAFormReq "Choose a file"
     <*> areq textField "What's on the file?" Nothing
+
+getBlogR :: Handler RepHtml
+getBlogR = defaultLayout $(widgetFile "blog")
