@@ -1,0 +1,8 @@
+cabal-dev
+rivierarb.sqlite3
+*~
+dist
+*.o
+*.a
+static/tmp
+*.hi
