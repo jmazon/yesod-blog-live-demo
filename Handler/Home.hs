@@ -38,7 +38,7 @@ sampleForm = renderDivs $ (,)
     <$> fileAFormReq "Choose a file"
     <*> areq textField "What's on the file?" Nothing
 
-posts = [ Post "Title" "Content" ]
-
 getBlogR :: Handler RepHtml
-getBlogR = defaultLayout $(widgetFile "blog")
+getBlogR = do
+  posts <- runDB (selectList [] [])
+  defaultLayout $(widgetFile "blog")

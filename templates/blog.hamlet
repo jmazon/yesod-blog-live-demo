@@ -3,5 +3,5 @@ $if null posts
   <p> Unfortunately, this blog is empty.
 $else
   <ul>
-    $forall post <- posts
+    $forall Entity postId post <- posts
       <li> #{postTitle post}
