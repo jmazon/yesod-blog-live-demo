@@ -7,7 +7,6 @@ $else
       <li>
         <a href=@{PostR postId}> #{postTitle post}
 <hr>
-<form method=post>
-  <input type=text name=title>
-  <input type=text name=content>
+<form method=post enctype=#{enctype}>
+  ^{formWidget}
   <input type=submit>

@@ -38,9 +38,15 @@ sampleForm = renderDivs $ (,)
     <$> fileAFormReq "Choose a file"
     <*> areq textField "What's on the file?" Nothing
 
+postCreationForm :: Form Post
+postCreationForm = renderDivs $ Post
+    <$> areq textField "Title" Nothing
+    <*> areq textField "Content" Nothing
+
 getBlogR :: Handler RepHtml
 getBlogR = do
   posts <- runDB (selectList [] [])
+  (formWidget,enctype) <- generateFormPost postCreationForm
   defaultLayout $(widgetFile "blog")
 
 postBlogR :: Handler RepHtml
