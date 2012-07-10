@@ -1,0 +1,2 @@
+<h1> #{postTitle post}
+<article> #{postContent post}
