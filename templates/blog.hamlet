@@ -6,3 +6,8 @@ $else
     $forall Entity postId post <- posts
       <li>
         <a href=@{PostR postId}> #{postTitle post}
+<hr>
+<form method=post>
+  <input type=text name=title>
+  <input type=text name=content>
+  <input type=submit>

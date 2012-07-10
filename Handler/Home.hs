@@ -43,6 +43,13 @@ getBlogR = do
   posts <- runDB (selectList [] [])
   defaultLayout $(widgetFile "blog")
 
+postBlogR :: Handler RepHtml
+postBlogR = do
+  Just title <- lookupPostParam "title"
+  Just content <- lookupPostParam "content"
+  postId <- runDB (insert $ Post title content)
+  redirect (PostR postId)
+
 getPostR :: PostId -> Handler RepHtml
 getPostR id = do
   post <- runDB (get404 id)
