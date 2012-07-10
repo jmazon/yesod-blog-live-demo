@@ -12,4 +12,4 @@ Email
 
 Post
     title Text
-    content Text
+    content Html

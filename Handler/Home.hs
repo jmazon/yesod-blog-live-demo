@@ -2,6 +2,7 @@
 module Handler.Home where
 
 import Import
+import Yesod.Form.Nic
 
 -- This is a handler function for the GET request method on the HomeR
 -- resource pattern. All of your resource patterns are defined in
@@ -41,7 +42,7 @@ sampleForm = renderDivs $ (,)
 postCreationForm :: Form Post
 postCreationForm = renderDivs $ Post
     <$> areq textField "Title" Nothing
-    <*> areq textField "Content" Nothing
+    <*> areq nicHtmlField "Content" Nothing
 
 getBlogR :: Handler RepHtml
 getBlogR = do

@@ -31,6 +31,7 @@ import Model
 import Text.Jasmine (minifym)
 import Web.ClientSession (getKey)
 import Text.Hamlet (hamletFile)
+import Yesod.Form.Nic
 
 -- | The site argument for your application. This can be a good place to
 -- keep settings and values requiring initialization before your application
@@ -160,3 +161,5 @@ instance RenderMessage App FormMessage where
 -- wiki:
 --
 -- https://github.com/yesodweb/yesod/wiki/Sending-email
+
+instance YesodNic App where
