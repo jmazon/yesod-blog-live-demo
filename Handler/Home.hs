@@ -45,5 +45,5 @@ getBlogR = do
 
 getPostR :: PostId -> Handler RepHtml
 getPostR id = do
-  Just post <- runDB (get id)
+  post <- runDB (get404 id)
   defaultLayout $(widgetFile "post")
