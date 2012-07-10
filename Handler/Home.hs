@@ -38,9 +38,6 @@ sampleForm = renderDivs $ (,)
     <$> fileAFormReq "Choose a file"
     <*> areq textField "What's on the file?" Nothing
 
-data Post = Post { postTitle :: Text
-                 , postContent :: Text }
-
 posts = [ Post "Title" "Content" ]
 
 getBlogR :: Handler RepHtml
