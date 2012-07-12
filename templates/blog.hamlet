@@ -1,0 +1,12 @@
+<h1>Riviera.rb Blog
+$if null posts
+  <p> Sorry, no contents yet!
+$else
+  <ul>
+    $forall Entity postId post <- posts
+      <li>
+        <a href=@{PostR postId}> #{postTitle post}
+<hr>
+<form method=post enctype=#{enctype}>
+  ^{widget}
+  <input type=submit>
